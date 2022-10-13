@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Top_ten
+# Outreachy-first-task
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -14,7 +14,7 @@ You can install the development version of packagetemplate from
 [Github](https://github.com) with:
 
 ``` r
-install_github("top_ten")
+install_github("Outreachy-first-task")
 ```
 
 ## Example
