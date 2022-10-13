@@ -19,7 +19,7 @@ install_github("Outreachy-first-task")
 
 ## Example
 
-This is a basic example which shows how to use helloWorld:
+This is a basic example which shows how to use top_ten:
 
 ``` r
 Top_ten <- function(x){
