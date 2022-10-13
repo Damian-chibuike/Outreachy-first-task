@@ -36,7 +36,6 @@ Top_ten <- function(x){
     head(10)%>%
     rename_if(is.character, ~gsub("_", " ", .x))
     
- #>
 }
 
 Top_ten("Location of subjects")
