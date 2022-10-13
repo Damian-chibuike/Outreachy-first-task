@@ -1,0 +1,46 @@
+---
+title: "Vignette"
+output: html_document
+date: "2022-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## `Top_ten()` function
+
+`Top_ten()` is a function that takes in a column name in the [BugSigDB](https://bugsigdb.org/) data imported with [bugsigdbr](https://bioconductor.org/packages/release/bioc/html/bugsigdbr.html) package.
+
+### Argument
+
+> `x`: a column name
+
+### Example
+
+`Top_ten(x = "Authors list")`
+
+`Top_ten("Condition")`
+
+```{r}
+Top_ten <- function(x){
+  
+  library(dplyr)
+  
+  column = gsub(" ", "_", x)
+  
+  bugsigdbr::importBugSigDB()%>%
+    rename_with(~gsub(" ", "_", .x))%>%
+    group_by_(column)%>%
+    summarise(`No of Papers` = n())%>%
+    arrange(desc(`No of Papers`))%>%
+    head(10)%>%
+    rename_if(is.character, ~gsub("_", " ", .x))
+}
+
+Top_ten("Location of subjects")
+
+
+
+
+```
